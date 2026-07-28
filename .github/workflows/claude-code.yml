@@ -1,0 +1,45 @@
+name: Claude Code
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Issue number to work from
+        required: true
+        type: string
+
+# Least privilege for the guardrail stub: it only reads issue labels.
+# If you wire real agent execution into this workflow, grant the minimum
+# additional scopes that step needs (and keep the human merge gate intact:
+# never grant a token that can merge or bypass branch protection).
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  guardrails:
+    name: Validate agent-ready issue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check issue label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          labels="$(gh issue view "$ISSUE_NUMBER" --repo "$REPO" --json labels --jq '.labels[].name')"
+          if ! printf '%s\n' "$labels" | grep -qx "agent-ready"; then
+            echo "::error::Issue $ISSUE_NUMBER is not labeled agent-ready. Refusing to proceed." >&2
+            exit 1
+          fi
+          echo "Issue $ISSUE_NUMBER is agent-ready."
+
+      - name: Next steps
+        run: |
+          cat <<'MSG'
+          This workflow is intentionally a guardrail stub.
+
+          Connect your Claude Code execution mechanism here if desired.
+          Keep the human review gate intact: agents may open PRs, but must not merge.
+          MSG
