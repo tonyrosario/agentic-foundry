@@ -3,6 +3,7 @@ name: postmortem
 argument-hint: "[path-or-session-id | --quick | --analyst]"
 compatibility: "Claude Code. Requires ${CLAUDE_SKILL_DIR} substitution (v2.1.129+)."
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Task
+disable-model-invocation: true
 description: Produce a postmortem for a failed agent run — reconstructs the timeline from the trace, verifies claims against real state, classifies the failure on both symptom and harness-cause axes, and drafts a tracked prevention item for a human to file. Use when an agent run went wrong and the harness let it through — a bad change reached a shared branch, an irreversible external action fired, a verification step was skipped or misread, or the same failure has now recurred. Also use when the user says "postmortem", "what went wrong", "write this up", or "why did that agent fail". Do NOT use for a step that failed and was immediately caught and fixed — that is the system working.
 ---
 
