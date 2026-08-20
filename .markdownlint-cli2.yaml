@@ -1,0 +1,18 @@
+globs:
+  - "**/*.md"
+
+ignores:
+  - "local/**"
+  - "harnesses/review-plan/knowledgebase/audits/**"
+  - "harnesses/review-plan/knowledgebase/adjudications/**"
+  - "harnesses/review-plan/knowledgebase/questions/plan-classifier.md"
+
+config:
+  MD013:
+    line_length: 120
+    heading_line_length: 120
+    code_block_line_length: 120
+    code_blocks: false
+    tables: false
+  MD060:
+    style: compact

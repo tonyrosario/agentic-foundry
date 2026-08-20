@@ -1,3 +1,8 @@
+<!-- GENERATED FILE — DO NOT EDIT.
+     Built by scripts/build-skills.py from harnesses/postmortem/canonical/postmortem-record.md
+     Edit that file and re-run the build. Direct edits here are lost and will
+     fail `python3 scripts/build-skills.py --check`. -->
+
 <!--
 AGENT: STOP AND READ.
 
@@ -22,12 +27,12 @@ Normative template for postmortems on agentic engineering runs, authored **by an
 either the one that performed the run, or a separate analyst agent reading its trace.
 
 Vendor-neutral. Nothing here assumes a particular model, runtime, or harness. Runtime-specific
-entry points live in [`../adapters/`](../adapters/); a portable copy-paste version lives in
-[`portable-prompt.md`](./portable-prompt.md).
+entry points live in the harness's runtime adapters; a portable copy-paste version lives in
+the harness's portable copy-paste prompt.
 
 - Reference lists (failure codes, severity, cause classes): [`reference.md`](./reference.md)
 - A filled-in example:
-  [`PM-EXAMPLE-backfill-wrong-database.md`](../knowledgebase/examples/PM-EXAMPLE-backfill-wrong-database.md)
+  [`PM-EXAMPLE-backfill-wrong-database.md`](PM-EXAMPLE-backfill-wrong-database.md)
 
 ---
 
@@ -170,7 +175,7 @@ third-occurrence trigger to have anything to check.
 Keeping it out of the workspace means a later run that stages broadly cannot commit it.
 
 A runtime adapter may override this with a location that fits its own conventions better —
-see [`../adapters/`](../adapters/). The requirements it must preserve: outside the workspace,
+see the harness's runtime adapters. The requirements it must preserve: outside the workspace,
 durable, and separated per user or account. If no adapter is present, the XDG rule above is
 binding — do not go looking for one.
 

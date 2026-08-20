@@ -7,27 +7,64 @@ core, runtime-specific entry points behind adapters.
 
 | You want to… | Use |
 | --- | --- |
-| Run it in Claude Code | `/postmortem` — see [`adapters/claude-code/postmortem/`](adapters/claude-code/postmortem/SKILL.md) |
+| Install it in Claude Code | The built package at [`skills/postmortem/`](../../skills/postmortem/) — symlink it into `.claude/skills/` or `~/.claude/skills/`. Do not install the adapter source. |
 | Point any agent at it, no install | Tell it to read [`canonical/postmortem-record.md`](canonical/postmortem-record.md). The file instructs the agent itself. |
 | Run it somewhere else entirely | Copy the block in [`canonical/portable-prompt.md`](canonical/portable-prompt.md) |
 | See what output looks like first | [`knowledgebase/examples/`](knowledgebase/examples/) |
 
-All four produce the same record. The canonical template is the single source of truth; the
-adapters route to it and the portable prompt is a version-stamped export of it.
+The canonical files are the single source of truth. The Claude Code package is **generated**
+from them and is byte-checked against them (see [Build](#build)), so it cannot drift. The
+portable prompt is a **hand-maintained, lossy** export — it omits mode routing, recurrence
+escalation, and refusal behavior, and it will drift. Its version stamp is how you tell.
 
 ## Map
 
 ```text
 postmortem/
-├── canonical/                    Normative, vendor-neutral
+├── canonical/                    Normative, vendor-neutral. Source of truth.
 │   ├── postmortem-record.md      The template + how to run it. Self-executing.
 │   ├── reference.md              Failure codes, harness causes, severity, autonomy levels
-│   └── portable-prompt.md        Self-contained copy-paste export (lossy by design)
+│   └── portable-prompt.md        Hand-maintained copy-paste export (lossy, drifts by design)
 ├── adapters/
-│   └── claude-code/postmortem/   /postmortem skill
+│   └── claude-code/postmortem/   Thin adapter SOURCE — provider concerns only. Not installable.
 └── knowledgebase/
     └── examples/                 Worked example (synthetic, labeled as such)
 ```
+
+Built output lives outside this directory, at repo-root [`skills/postmortem/`](../../skills/postmortem/) —
+that is the installable, vendorable unit.
+
+## Build
+
+The adapter owns arguments, trace resolution, analyst spawning, Claude Code paths, tool
+declarations, and console reporting. Canonical owns triggers, procedure, taxonomy, evidence
+rules, the record schema, redaction, and completion semantics. Neither restates the other.
+
+```sh
+python3 scripts/build-skills.py           # regenerate skills/postmortem/
+python3 scripts/build-skills.py --check   # fail if committed output is stale
+```
+
+Never edit anything under `skills/` directly — it is regenerated and every file carries a
+DO-NOT-EDIT banner. Edit the canonical source or the adapter source and rebuild.
+
+### Why the Claude Code adapter overrides the record location
+
+Canonical writes records to an XDG state directory and explicitly permits an adapter to
+override it. The Claude Code adapter does, writing to
+`${CLAUDE_CONFIG_DIR:-$HOME/.claude}/postmortems/` so records sit alongside Claude Code's other
+durable session artifacts (`snapshots/`, `plans/`, `projects/`, `history.jsonl`). That is a
+sanctioned override, not a disagreement: it preserves every requirement canonical imposes —
+outside the workspace being analyzed, durable, and separated per account.
+
+### Why the adapter drafts the prevention item rather than filing it
+
+Canonical closes a record either as *engineering complete* — a prevention item with a real
+tracking reference and an owner — or as a *documentation-only handoff*, where the item is
+drafted in full and `tracking` reads `not-filed: human handoff required`. The Claude Code
+adapter always takes the second path: a retrospective must not acquire external-write authority
+as a side effect of running. The drafted item is a real deliverable, and the adapter is barred
+from reporting it as the canonical Definition of Done met.
 
 ## What it is for
 

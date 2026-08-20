@@ -6,6 +6,10 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Task
 description: Produce a postmortem for a failed agent run — reconstructs the timeline from the trace, verifies claims against real state, classifies the failure on both symptom and harness-cause axes, and drafts a tracked prevention item for a human to file. Use when an agent run went wrong and the harness let it through — a bad change reached a shared branch, an irreversible external action fired, a verification step was skipped or misread, or the same failure has now recurred. Also use when the user says "postmortem", "what went wrong", "write this up", or "why did that agent fail". Do NOT use for a step that failed and was immediately caught and fixed — that is the system working.
 ---
 
+<!-- GENERATED FILE — DO NOT EDIT.
+     Built by scripts/build-skills.py from harnesses/postmortem/adapters/claude-code/postmortem/SKILL.md
+     Edit that file and re-run the build. Direct edits here are lost and will
+     fail `python3 scripts/build-skills.py --check`. -->
 # Postmortem
 
 Claude Code adapter for the vendor-neutral postmortem harness. This file owns **provider
@@ -14,7 +18,7 @@ console reporting.
 
 **Everything else is canonical and lives elsewhere.** Triggers, procedure, taxonomy, evidence
 rules, the record schema, redaction, and completion semantics are defined in
-`../../../canonical/postmortem-record.md` and `../../../canonical/reference.md`. Do not
+`${CLAUDE_SKILL_DIR}/references/postmortem-record.md` and `${CLAUDE_SKILL_DIR}/references/reference.md`. Do not
 reimplement any of it here. If this adapter and the canonical record disagree on anything
 canonical owns, the canonical record wins.
 
@@ -44,12 +48,12 @@ If the trace cannot be located, say so and stop. Do not proceed from recollectio
 
 ## Procedure
 
-1. **Read the canonical record** at `../../../canonical/postmortem-record.md`, and
-   `../../../canonical/reference.md` for the vocabulary. Everything you need is there. A worked
+1. **Read the canonical record** at `${CLAUDE_SKILL_DIR}/references/postmortem-record.md`, and
+   `${CLAUDE_SKILL_DIR}/references/reference.md` for the vocabulary. Everything you need is there. A worked
    example of a finished record is at
-   `../../../knowledgebase/examples/PM-EXAMPLE-backfill-wrong-database.md`.
+   `${CLAUDE_SKILL_DIR}/references/PM-EXAMPLE-backfill-wrong-database.md`.
 
-2. **Determine severity early**, using the scale in `../../../canonical/reference.md`. It selects the mode:
+2. **Determine severity early**, using the scale in `${CLAUDE_SKILL_DIR}/references/reference.md`. It selects the mode:
    sev1/sev2 → analyst, sev3 → self, sev4 → self abbreviated.
 
 3. **If the mode is analyst, do not write the record yourself.** Gather the inputs first (step
