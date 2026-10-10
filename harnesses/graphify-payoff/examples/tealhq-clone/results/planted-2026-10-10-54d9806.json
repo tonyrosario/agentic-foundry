@@ -1,0 +1,105 @@
+{
+  "planted": {
+    "dropped_import": "app/e2e/support/test.ts -> app/e2e/support/timeZone.ts",
+    "wrong_call": {
+      "question": "C1",
+      "decoy_file": "app/server/database/sqliteJobStore.ts"
+    },
+    "ghost_file": "app/src/tracker/JobRow.tsx"
+  },
+  "freshness": {
+    "built_at_commit": "de9d2cf",
+    "head": "54d9806",
+    "app_files_changed_since_build": [],
+    "uncommitted_app_changes": false,
+    "deleted_or_renamed_paths_checked": 23,
+    "ghost_files_in_graph": [
+      "app/src/tracker/JobRow.tsx"
+    ],
+    "source_files": 260,
+    "source_files_without_nodes": 0,
+    "uncovered_sample": []
+  },
+  "imports": {
+    "recall": 0.999,
+    "expected": 766,
+    "found": 765,
+    "precision": 1.0,
+    "resolved_through_reexport": 59,
+    "unexplained_edges": [],
+    "unexplained_count": 0,
+    "css_imports_in_source": 103,
+    "css_imports_in_graph": 0,
+    "by_root": {
+      "e2e": "26/27",
+      "server": "117/117",
+      "src": "622/622"
+    },
+    "by_kind": {
+      "type": "161/161",
+      "value": "604/605"
+    },
+    "missed": [
+      "app/e2e/support/test.ts -> app/e2e/support/timeZone.ts (value)"
+    ]
+  },
+  "calls": [
+    {
+      "id": "C1",
+      "found": false,
+      "wrong_target": [
+        "app/server/database/sqliteJobStore.ts"
+      ],
+      "targets_seen": [
+        "app/server/database/sqliteJobStore.ts"
+      ]
+    },
+    {
+      "id": "C2",
+      "found": true,
+      "wrong_target": [],
+      "targets_seen": [
+        "app/server/start.ts"
+      ]
+    },
+    {
+      "id": "C3",
+      "found": true,
+      "wrong_target": [],
+      "targets_seen": [
+        "app/server/fixtures/dump.ts"
+      ]
+    },
+    {
+      "id": "C4",
+      "found": true,
+      "wrong_target": [],
+      "targets_seen": [
+        "app/src/data/httpJobStore.ts"
+      ]
+    },
+    {
+      "id": "C5",
+      "found": false,
+      "wrong_target": [],
+      "targets_seen": []
+    },
+    {
+      "id": "C6",
+      "found": false,
+      "wrong_target": [],
+      "targets_seen": []
+    },
+    {
+      "id": "C7",
+      "found": false,
+      "wrong_target": [],
+      "targets_seen": []
+    }
+  ],
+  "flagged": {
+    "dropped_import_flagged": true,
+    "wrong_call_flagged": true,
+    "ghost_file_flagged": true
+  }
+}

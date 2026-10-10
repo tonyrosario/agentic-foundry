@@ -1,0 +1,4 @@
+claude: 2.1.296 (Claude Code)
+graphify: graphify 0.9.74
+model: claude-opus-5-5 cap: 4
+Sat Oct 10 21:25:19 UTC 2026

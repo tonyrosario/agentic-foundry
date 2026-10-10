@@ -1,0 +1,187 @@
+{
+  "written": "2026-10-10, at 54d9806 (M17a), from source by grep before any graph run on these questions",
+  "notes": "Paths are repo-relative. `evidence` is a regex that must still match in that file, so a question whose answer the code has moved away from is reported stale instead of scored. Import, freshness and coverage checks are computed from source and git at run time and need no questions here.",
+  "calls": [
+    {
+      "id": "C1",
+      "why": "same name in three files: memoryJobStore imports notFound from memoryCollection",
+      "caller": "app/src/data/memoryJobStore.ts",
+      "symbol": "notFound",
+      "target": "app/src/data/memoryCollection.ts",
+      "not_targets": ["app/server/database/sqliteJobStore.ts", "app/server/database/sqlitePeople.ts"],
+      "evidence": { "app/src/data/memoryJobStore.ts": "import \\{[^}]*notFound[^}]*\\} from './memoryCollection'" }
+    },
+    {
+      "id": "C2",
+      "why": "same name in two files: main uses start.ts, not the fixture dumper's local startServer",
+      "caller": "app/server/main.ts",
+      "symbol": "startServer",
+      "target": "app/server/start.ts",
+      "not_targets": ["app/server/fixtures/dump.ts"],
+      "evidence": { "app/server/main.ts": "import \\{ startServer \\} from './start'" }
+    },
+    {
+      "id": "C3",
+      "why": "same name in two files: the fixture dumper calls its own local startServer",
+      "caller": "app/server/fixtures/dump.ts",
+      "symbol": "startServer",
+      "target": "app/server/fixtures/dump.ts",
+      "not_targets": ["app/server/start.ts"],
+      "evidence": { "app/server/fixtures/dump.ts": "function startServer\\(" }
+    },
+    {
+      "id": "C4",
+      "why": "same name in two files: httpJobStore calls its own settle",
+      "caller": "app/src/data/httpJobStore.ts",
+      "symbol": "settle",
+      "target": "app/src/data/httpJobStore.ts",
+      "not_targets": ["app/src/store/StoreProvider.test.tsx"],
+      "evidence": { "app/src/data/httpJobStore.ts": "function settle\\b" }
+    },
+    {
+      "id": "C5",
+      "why": "same name in two files: the StoreProvider test calls its own settle",
+      "caller": "app/src/store/StoreProvider.test.tsx",
+      "symbol": "settle",
+      "target": "app/src/store/StoreProvider.test.tsx",
+      "not_targets": ["app/src/data/httpJobStore.ts"],
+      "evidence": { "app/src/store/StoreProvider.test.tsx": "function settle\\(" }
+    },
+    {
+      "id": "C6",
+      "why": "method call through the store object inside an inline callback prop",
+      "caller": "app/src/people/ContactDetailPage.tsx",
+      "symbol": "updateContact",
+      "target": null,
+      "not_targets": [],
+      "evidence": { "app/src/people/ContactDetailPage.tsx": "write=\\{\\(note\\) => store\\.updateContact" }
+    },
+    {
+      "id": "C7",
+      "why": "method call through the store object inside onChange handlers",
+      "caller": "app/src/people/OutreachSection.tsx",
+      "symbol": "updateContact",
+      "target": null,
+      "not_targets": [],
+      "evidence": { "app/src/people/OutreachSection.tsx": "store\\.updateContact\\(contact\\.id" }
+    }
+  ],
+  "retrieval": [
+    {
+      "id": "R1",
+      "question": "where is the contact detail page route defined",
+      "expect": ["app/src/App.tsx", "app/src/people/ContactDetailPage.tsx"],
+      "evidence": { "app/src/App.tsx": "contact-tracker/:id" }
+    },
+    {
+      "id": "R2",
+      "question": "how does a failed save keep its draft and offer retry or discard",
+      "expect": ["app/src/store/saveRegistry.ts", "app/src/shell/ProblemBanner.tsx"],
+      "evidence": { "app/src/shell/ProblemBanner.tsx": "Retry saving" }
+    },
+    {
+      "id": "R3",
+      "question": "where are the in-flight scenario contacts built",
+      "expect": ["app/src/data/scenarios/inFlightPeople.ts"],
+      "evidence": {}
+    },
+    {
+      "id": "R4",
+      "question": "which component shows the list of jobs beside a job detail page",
+      "expect": ["app/src/detail/JobListPane.tsx", "app/src/components/ListPane.tsx"],
+      "evidence": { "app/src/detail/JobListPane.tsx": "<ListPane" }
+    },
+    {
+      "id": "R5",
+      "question": "how is the guidance percent calculated",
+      "expect": ["app/src/data/selectors.ts"],
+      "evidence": { "app/src/data/selectors.ts": "guidancePercent" }
+    },
+    {
+      "id": "R6",
+      "question": "how are home priorities chosen and ordered",
+      "expect": ["app/src/data/selectors.ts", "app/src/home/PrioritiesCard.tsx"],
+      "evidence": { "app/src/data/selectors.ts": "export function priorities" }
+    },
+    {
+      "id": "R7",
+      "question": "how does the server apply database migrations",
+      "expect": ["app/server/database/openDatabase.ts"],
+      "evidence": { "app/server/database/openDatabase.ts": "schema_migrations|migrat" }
+    },
+    {
+      "id": "R8",
+      "question": "how does the server refuse to load a scenario in dogfood mode",
+      "expect": ["app/server/app.ts"],
+      "evidence": { "app/server/app.ts": "scenario" }
+    },
+    {
+      "id": "R9",
+      "question": "where does the browser HTTP store call the API",
+      "expect": ["app/src/data/httpJobStore.ts"],
+      "evidence": {}
+    },
+    {
+      "id": "R10",
+      "question": "where are job contact links stored in SQLite",
+      "expect": ["app/server/database/sqliteLinks.ts"],
+      "evidence": { "app/server/database/sqliteLinks.ts": "job_contacts" }
+    },
+    {
+      "id": "R11",
+      "question": "how is a contact's full name built",
+      "expect": ["app/src/data/contactRules.ts"],
+      "evidence": { "app/src/data/contactRules.ts": "fullName" }
+    },
+    {
+      "id": "R12",
+      "question": "how are tracker rows grouped by status",
+      "expect": ["app/src/tracker/trackerRows.ts"],
+      "evidence": { "app/src/tracker/trackerRows.ts": "export function groupRows" }
+    },
+    {
+      "id": "R13",
+      "question": "how are salaries and dates formatted for display",
+      "expect": ["app/src/format/display.ts"],
+      "evidence": { "app/src/format/display.ts": "dayFormat" }
+    },
+    {
+      "id": "R14",
+      "question": "which components delete contacts",
+      "expect": ["app/src/people/DeleteContactsButton.tsx", "app/src/people/ContactHeader.tsx", "app/src/people/ContactToolbar.tsx"],
+      "evidence": { "app/src/people/ContactHeader.tsx": "DeleteContactsButton" }
+    },
+    {
+      "id": "R15",
+      "question": "how does the notes panel stop an older save overwriting a newer draft",
+      "expect": ["app/src/detail/NotesPanel.tsx"],
+      "evidence": { "app/src/detail/NotesPanel.tsx": "lastWrite" }
+    },
+    {
+      "id": "R16",
+      "question": "where are the mock API answers for people defined for the dev server",
+      "expect": ["app/src/mocks/peopleHandlers.ts"],
+      "evidence": {}
+    },
+    {
+      "id": "R17",
+      "question": "where is the stripe payment webhook handled",
+      "expect": [],
+      "expect_none": true,
+      "evidence": {}
+    },
+    {
+      "id": "R18",
+      "question": "where is the OAuth login callback handled",
+      "expect": [],
+      "expect_none": true,
+      "evidence": {}
+    }
+  ],
+  "affected": [
+    { "id": "A1", "node": "useDraftValue()", "file": "app/src/store/useDraftValue.ts" },
+    { "id": "A2", "node": "isWebAddress()", "file": "app/src/format/webAddress.ts" },
+    { "id": "A3", "node": "NotesPanel()", "file": "app/src/detail/NotesPanel.tsx" },
+    { "id": "A4", "node": "groupRows()", "file": "app/src/tracker/trackerRows.ts" }
+  ]
+}
