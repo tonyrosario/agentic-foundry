@@ -1,0 +1,33 @@
+{
+  "_comment": "Instance of the graphify payoff harness for tealhq-clone. Paths are relative to this file unless absolute.",
+  "repo": "../..",
+  "code_root": "app",
+  "source_dirs": ["src", "server", "e2e"],
+  "source_exts": ["ts", "tsx", "css"],
+  "corpus_cutoff": "2026-10-10T20:00:00Z",
+  "graph": {
+    "hook_command_prefix": "graphify hook-guard",
+    "instructions_file": "CLAUDE.md",
+    "instructions_section_heading": "## graphify",
+    "graph_out": "app/graphify-out",
+    "arm_N_remove": [".claude/CLAUDE.md", ".claude/skills/graphify"],
+    "arm_D_note": "\n## graphify\n\nA code graph of `app/` exists in `graphify-out/`. `graphify query \"<question>\"`, `graphify path`, `graphify explain` and `graphify affected` are available when they help; nothing requires them."
+  },
+  "runs": {
+    "model": "claude-opus-5-5",
+    "cap_usd": 4,
+    "prompt": "go {task}. Do the session-start reading, then stop before your first edit and write `PLAN.md` in the repository root listing: files to create, existing files to change, existing modules to reuse, and callers that the change affects. Do not spawn subagents."
+  },
+  "tasks": {
+    "m15": {"base": "40b2d84", "tick": "c5178f0", "note": "People and companies data layer"},
+    "m16": {"base": "c5178f0", "tick": "9738747", "note": "People list"},
+    "m17a": {"base": "9738747", "tick": "54d9806", "note": "Contact detail"}
+  },
+  "weights": {
+    "input_tokens": 1.0,
+    "cache_creation_input_tokens": 1.25,
+    "cache_read_input_tokens": 0.1,
+    "output_tokens": 5.0
+  },
+  "thresholds": {"T1": 0.20, "T2": 0.10, "T3": 0.05, "T4": 0.10, "T6": 0.02}
+}

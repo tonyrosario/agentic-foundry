@@ -1,0 +1,46 @@
+{
+  "_comment": "One example per section. Expected answers must come from grep and git, never from the graph. evidence: {path: regex} marks a question stale when the code no longer matches.",
+  "calls": [
+    {
+      "id": "C1",
+      "why": "same name in three files: memoryJobStore imports notFound from memoryCollection",
+      "caller": "app/src/data/memoryJobStore.ts",
+      "symbol": "notFound",
+      "target": "app/src/data/memoryCollection.ts",
+      "not_targets": [
+        "app/server/database/sqliteJobStore.ts",
+        "app/server/database/sqlitePeople.ts"
+      ],
+      "evidence": {
+        "app/src/data/memoryJobStore.ts": "import \\{[^}]*notFound[^}]*\\} from './memoryCollection'"
+      }
+    }
+  ],
+  "retrieval": [
+    {
+      "id": "R1",
+      "question": "where is the contact detail page route defined",
+      "expect": [
+        "app/src/App.tsx",
+        "app/src/people/ContactDetailPage.tsx"
+      ],
+      "evidence": {
+        "app/src/App.tsx": "contact-tracker/:id"
+      }
+    },
+    {
+      "id": "R17",
+      "question": "where is the stripe payment webhook handled",
+      "expect": [],
+      "expect_none": true,
+      "evidence": {}
+    }
+  ],
+  "affected": [
+    {
+      "id": "A1",
+      "node": "useDraftValue()",
+      "file": "app/src/store/useDraftValue.ts"
+    }
+  ]
+}

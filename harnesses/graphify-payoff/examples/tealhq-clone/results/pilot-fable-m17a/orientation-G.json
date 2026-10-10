@@ -1,0 +1,59 @@
+{
+  "session": "b7553e71",
+  "milestone": "m17a",
+  "base": "9738747",
+  "tick": "54d9806",
+  "window": {
+    "start": "2026-10-10T21:11:50.035Z",
+    "end": "2026-10-10T21:15:47.382Z",
+    "closed_by": "PLAN.md written by Write"
+  },
+  "M1_raw": 899797,
+  "M1_weighted": 239673,
+  "M1_fields": {
+    "input_tokens": 482,
+    "cache_creation_input_tokens": 79082,
+    "cache_read_input_tokens": 808332,
+    "output_tokens": 11901
+  },
+  "M1_requests": 16,
+  "models": [
+    "claude-fable-5-1"
+  ],
+  "M2_tool_calls": 16,
+  "M5_exploratory_share": 0.744,
+  "M5_opened": 39,
+  "M5_exploratory": [
+    "e2e/m13-failures.test.ts",
+    "e2e/m16-people-list.test.ts",
+    "e2e/m6a-job-detail.test.ts",
+    "e2e/m7-detail-panels.test.ts",
+    "e2e/support/test.ts",
+    "src/components/DateCell.tsx",
+    "src/components/SelectField.tsx",
+    "src/data/JobStore.ts",
+    "src/data/contactRules.ts",
+    "src/data/dates.ts",
+    "src/data/peopleOptions.ts",
+    "src/data/peopleTypes.ts",
+    "src/data/scenarios/inFlightPeople.ts",
+    "src/detail/DetailTabs.tsx",
+    "src/detail/EditJobButton.tsx",
+    "src/detail/SidePanel.tsx",
+    "src/detail/detailTabKeys.ts",
+    "src/format/display.ts",
+    "src/people/AddContactButton.tsx",
+    "src/people/ContactCell.tsx",
+    "src/people/ContactFormDialog.tsx",
+    "src/people/ContactTrackerPage.tsx",
+    "src/people/contactPaths.ts",
+    "src/people/contactRows.ts",
+    "src/store/failures.ts",
+    "src/store/optimistic.ts",
+    "src/store/saveRegistry.ts",
+    "src/store/useContacts.ts",
+    "src/store/useStore.ts"
+  ],
+  "reference_changed": 34,
+  "reference_existed_at_base": 10
+}

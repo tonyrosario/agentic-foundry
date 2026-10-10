@@ -1,0 +1,497 @@
+{
+  "run_at": "2026-10-10T14:39:20",
+  "graphify": "graphify 0.9.74",
+  "nodes": 1525,
+  "edges": 4521,
+  "freshness": {
+    "built_at_commit": "de9d2cf",
+    "head": "54d9806",
+    "app_files_changed_since_build": [],
+    "uncommitted_app_changes": false,
+    "deleted_or_renamed_paths_checked": 23,
+    "ghost_files_in_graph": [],
+    "source_files": 260,
+    "source_files_without_nodes": 0,
+    "uncovered_sample": []
+  },
+  "imports": {
+    "recall": 1.0,
+    "expected": 766,
+    "found": 766,
+    "precision": 1.0,
+    "resolved_through_reexport": 59,
+    "unexplained_edges": [],
+    "unexplained_count": 0,
+    "css_imports_in_source": 103,
+    "css_imports_in_graph": 0,
+    "by_root": {
+      "e2e": "27/27",
+      "server": "117/117",
+      "src": "622/622"
+    },
+    "by_kind": {
+      "type": "161/161",
+      "value": "605/605"
+    },
+    "missed": []
+  },
+  "calls": [
+    {
+      "id": "C1",
+      "found": true,
+      "wrong_target": [],
+      "targets_seen": [
+        "app/src/data/memoryCollection.ts"
+      ]
+    },
+    {
+      "id": "C2",
+      "found": true,
+      "wrong_target": [],
+      "targets_seen": [
+        "app/server/start.ts"
+      ]
+    },
+    {
+      "id": "C3",
+      "found": true,
+      "wrong_target": [],
+      "targets_seen": [
+        "app/server/fixtures/dump.ts"
+      ]
+    },
+    {
+      "id": "C4",
+      "found": true,
+      "wrong_target": [],
+      "targets_seen": [
+        "app/src/data/httpJobStore.ts"
+      ]
+    },
+    {
+      "id": "C5",
+      "found": false,
+      "wrong_target": [],
+      "targets_seen": []
+    },
+    {
+      "id": "C6",
+      "found": false,
+      "wrong_target": [],
+      "targets_seen": []
+    },
+    {
+      "id": "C7",
+      "found": false,
+      "wrong_target": [],
+      "targets_seen": []
+    }
+  ],
+  "retrieval": [
+    {
+      "id": "R1",
+      "expected_found": "2/2",
+      "first_rank": 1,
+      "files_returned": 39,
+      "chars": 6668,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/src/people/ContactDetailPage.tsx",
+        "app/src/people/contactRows.test.ts",
+        "app/src/detail/DetailTabs.tsx",
+        "app/src/tracker/JobTrackerPage.tsx",
+        "app/server/peopleRoutes.ts",
+        "app/src/data/types.ts",
+        "app/package.json",
+        "app/src/data/requestRules.ts"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R2",
+      "expected_found": "1/2",
+      "first_rank": 1,
+      "files_returned": 16,
+      "chars": 11167,
+      "truncated": false,
+      "missing": [
+        "app/src/shell/ProblemBanner.tsx"
+      ],
+      "returned_sample": [
+        "app/src/store/saveRegistry.ts",
+        "app/src/data/checklist.ts",
+        "app/src/store/failures.ts",
+        "app/src/data/types.ts",
+        "app/server/database/sqliteJobStore.ts",
+        "app/src/data/memoryJobStore.ts",
+        "app/src/detail/ChecklistPanel.tsx",
+        "app/src/store/StoreProvider.tsx"
+      ],
+      "passed": false
+    },
+    {
+      "id": "R3",
+      "expected_found": "1/1",
+      "first_rank": 39,
+      "files_returned": 43,
+      "chars": 6693,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/src/people/contactRows.test.ts",
+        "app/src/data/scenarios/index.ts",
+        "app/e2e/support/processes.ts",
+        "app/src/data/scenarios/inFlight.ts",
+        "app/src/data/types.ts",
+        "app/e2e/support/test.ts",
+        "app/src/data/peopleTypes.ts",
+        "app/src/data/stages.ts"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R4",
+      "expected_found": "1/2",
+      "first_rank": 51,
+      "files_returned": 60,
+      "chars": 6722,
+      "truncated": true,
+      "missing": [
+        "app/src/components/ListPane.tsx"
+      ],
+      "returned_sample": [
+        "app/src/tracker/trackerRows.test.ts",
+        "app/src/components/placeBelow.ts",
+        "app/src/data/api/openapi.ts",
+        "app/src/detail/DetailTabs.tsx",
+        "app/src/data/types.ts",
+        "app/src/tracker/listMenus.ts",
+        "app/src/tracker/JobTrackerPage.tsx",
+        "app/package.json"
+      ],
+      "passed": false
+    },
+    {
+      "id": "R5",
+      "expected_found": "1/1",
+      "first_rank": 1,
+      "files_returned": 46,
+      "chars": 6679,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/src/data/selectors.ts",
+        "app/src/data/guidance.ts",
+        "app/src/detail/GuidanceBar.tsx",
+        "app/src/data/types.ts",
+        "app/src/store/useStore.ts",
+        "app/package.json",
+        "app/server/database/sqliteJobStore.ts",
+        "app/src/detail/JobDetailPage.tsx"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R6",
+      "expected_found": "2/2",
+      "first_rank": 2,
+      "files_returned": 38,
+      "chars": 6583,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/src/people/OutreachSection.tsx",
+        "app/src/data/selectors.ts",
+        "app/src/home/HomePage.tsx",
+        "app/src/App.tsx",
+        "app/src/data/selectors.test.ts",
+        "app/src/home/DatesCard.tsx",
+        "app/src/home/GoalCard.tsx",
+        "app/src/store/useJobs.ts"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R7",
+      "expected_found": "1/1",
+      "first_rank": 3,
+      "files_returned": 18,
+      "chars": 6641,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/server/database/migrations.ts",
+        "app/package.json",
+        "app/server/database/openDatabase.ts",
+        "app/server/upgrade.test.ts",
+        "app/server/database/openDatabase.test.ts",
+        "app/server/database/schemaFixtures.test.ts",
+        "app/src/data/JobStore.ts",
+        "app/server/database/sqliteJobStore.ts"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R8",
+      "expected_found": "1/1",
+      "first_rank": 22,
+      "files_returned": 49,
+      "chars": 6659,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/e2e/m14-dogfood.test.ts",
+        "app/package.json",
+        "app/src/account/ScenarioPicker.tsx",
+        "app/server/config.ts",
+        "app/e2e/m17a-contact-detail.test.ts",
+        "app/src/data/scenarios/index.ts",
+        "app/src/data/types.ts",
+        "app/src/data/peopleTypes.ts"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R9",
+      "expected_found": "0/1",
+      "first_rank": null,
+      "files_returned": 6,
+      "chars": 1484,
+      "truncated": false,
+      "missing": [
+        "app/src/data/httpJobStore.ts"
+      ],
+      "returned_sample": [
+        "app/server/httpStatuses.test.ts",
+        "app/server/fixtures/fill.ts",
+        "app/src/mocks/contractCheck.ts",
+        "app/src/mocks/browser.ts",
+        "app/src/store/useDraftValue.test.tsx",
+        "app/server/testing/serverStores.ts"
+      ],
+      "passed": false
+    },
+    {
+      "id": "R10",
+      "expected_found": "1/1",
+      "first_rank": 1,
+      "files_returned": 62,
+      "chars": 6667,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/server/database/sqliteLinks.ts",
+        "app/src/people/contactRows.test.ts",
+        "app/src/data/peopleTypes.ts",
+        "app/src/data/types.ts",
+        "app/server/database/sqliteJobStore.ts",
+        "app/src/store/useStoreData.ts",
+        "app/src/store/useStore.ts",
+        "app/package.json"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R11",
+      "expected_found": "1/1",
+      "first_rank": 5,
+      "files_returned": 43,
+      "chars": 6660,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/package.json",
+        "app/src/people/contactRows.test.ts",
+        "app/src/data/peopleTypes.ts",
+        "app/e2e/support/processes.ts",
+        "app/src/data/contactRules.ts",
+        "app/e2e/support/test.ts",
+        "app/README.md",
+        "app/src/data/JobStore.ts"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R12",
+      "expected_found": "1/1",
+      "first_rank": 3,
+      "files_returned": 32,
+      "chars": 6627,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/e2e/m3-tracker-table.test.ts",
+        "app/src/data/scenarios/inFlight.ts",
+        "app/src/tracker/trackerRows.ts",
+        "app/src/tracker/StatusCell.tsx",
+        "app/src/data/types.ts",
+        "app/src/store/useStore.ts",
+        "app/src/tracker/JobTrackerPage.tsx",
+        "app/src/store/changes.ts"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R13",
+      "expected_found": "1/1",
+      "first_rank": 2,
+      "files_returned": 33,
+      "chars": 6580,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/e2e/m17a-contact-detail.test.ts",
+        "app/src/format/display.ts",
+        "app/src/data/types.ts",
+        "app/src/detail/JobHeader.tsx",
+        "app/src/tracker/JobCell.tsx",
+        "app/src/home/GoalCard.tsx",
+        "app/src/data/salary.ts",
+        "app/src/detail/SalaryButton.tsx"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R14",
+      "expected_found": "3/3",
+      "first_rank": 3,
+      "files_returned": 48,
+      "chars": 6621,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/src/people/contactRows.test.ts",
+        "app/src/data/api/openapi.ts",
+        "app/src/people/DeleteContactsButton.tsx",
+        "app/src/store/useStore.ts",
+        "app/package.json",
+        "app/src/data/httpJobStore.ts",
+        "app/src/data/api/storeOperations.ts",
+        "app/src/people/ContactToolbar.tsx"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R15",
+      "expected_found": "1/1",
+      "first_rank": 2,
+      "files_returned": 40,
+      "chars": 6648,
+      "truncated": true,
+      "missing": [],
+      "returned_sample": [
+        "app/e2e/m13-failures.test.ts",
+        "app/src/detail/NotesPanel.tsx",
+        "app/src/data/checklist.ts",
+        "app/src/pages/PlaceholderPage.tsx",
+        "app/src/detail/ChecklistPanel.tsx",
+        "app/e2e/support/processes.ts",
+        "app/src/data/types.ts",
+        "app/src/store/useStore.ts"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R16",
+      "expected_found": "0/1",
+      "first_rank": null,
+      "files_returned": 37,
+      "chars": 6629,
+      "truncated": true,
+      "missing": [
+        "app/src/mocks/peopleHandlers.ts"
+      ],
+      "returned_sample": [
+        "app/package.json",
+        "app/server/fixtures/fill.ts",
+        "app/src/mocks/handlers.test.ts",
+        "app/src/data/peopleOptions.ts",
+        "app/src/data/types.ts",
+        "app/src/tracker/SettingsMenu.tsx",
+        "app/src/data/contactRules.ts",
+        "app/src/people/ContactCell.tsx"
+      ],
+      "passed": false
+    },
+    {
+      "id": "R17",
+      "expected_found": "0/0",
+      "first_rank": null,
+      "files_returned": 7,
+      "chars": 3401,
+      "truncated": false,
+      "missing": [],
+      "returned_sample": [
+        "app/src/data/api/openapi.ts",
+        "app/src/data/httpJobStore.ts",
+        "app/src/data/api/storeOperations.ts",
+        "app/src/mocks/handlers.ts",
+        "app/src/mocks/peopleHandlers.ts",
+        "app/src/data/scenarios/names.ts",
+        "app/src/mocks/contractCheck.ts"
+      ],
+      "passed": false
+    },
+    {
+      "id": "R18",
+      "expected_found": "0/0",
+      "first_rank": null,
+      "files_returned": 0,
+      "chars": 189,
+      "truncated": false,
+      "missing": [],
+      "returned_sample": [],
+      "passed": true
+    }
+  ],
+  "affected": [
+    {
+      "id": "A1",
+      "expected_importers": 3,
+      "found": 3,
+      "missing": [],
+      "chars": 833
+    },
+    {
+      "id": "A2",
+      "expected_importers": 2,
+      "found": 2,
+      "missing": [],
+      "chars": 737
+    },
+    {
+      "id": "A3",
+      "expected_importers": 2,
+      "found": 2,
+      "missing": [],
+      "chars": 694
+    },
+    {
+      "id": "A4",
+      "expected_importers": 3,
+      "found": 3,
+      "missing": [],
+      "chars": 734
+    }
+  ],
+  "summary": {
+    "run_at": "2026-10-10T14:39:20",
+    "head": "54d9806",
+    "built_at": "de9d2cf",
+    "stale_graph": false,
+    "nodes": 1525,
+    "import_recall": 1.0,
+    "import_precision": 1.0,
+    "css_imports_in_graph": "0/103",
+    "calls_found": "4/7",
+    "calls_wrong_target": 0,
+    "retrieval_passed": "13/18",
+    "retrieval_truncated": 14,
+    "retrieval_mean_chars": 6073,
+    "affected_importers_found": "10/10",
+    "ghost_files": 0,
+    "uncovered_source_files": 0,
+    "stale_questions": 0
+  }
+}

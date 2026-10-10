@@ -1,0 +1,36 @@
+{
+  "_comment": "Copy to harness.json beside the scripts (or set HARNESS_CONFIG). Paths are relative to this file unless absolute.",
+  "repo": "../..",
+  "code_root": "",
+  "source_dirs": ["src", "test"],
+  "source_exts": ["ts", "tsx", "js", "jsx", "css"],
+  "corpus_cutoff": "2099-01-01T00:00:00Z",
+  "graph": {
+    "hook_command_prefix": "graphify hook-guard",
+    "instructions_file": "CLAUDE.md",
+    "instructions_section_heading": "## graphify",
+    "graph_out": "graphify-out",
+    "arm_N_remove": [".claude/CLAUDE.md", ".claude/skills/graphify"],
+    "arm_D_note": "\n## graphify\n\nA code graph exists in `graphify-out/`. `graphify query \"<question>\"`, `graphify path`, `graphify explain` and `graphify affected` are available when they help; nothing requires them.",
+    "questions_file": "questions.json"
+  },
+  "runs": {
+    "model": "claude-opus-5-5",
+    "cap_usd": 4,
+    "plan_file": "PLAN.md",
+    "prompt": "go {task}. Do the session-start reading, then stop before your first edit and write `PLAN.md` in the repository root listing: files to create, existing files to change, existing modules to reuse, and callers that the change affects. Do not spawn subagents."
+  },
+  "tasks": {
+    "task-a": {"base": "<sha before the task's first commit>", "tick": "<sha where the task is done>", "note": "what the task was"},
+    "task-b": {"base": "", "tick": "", "note": ""},
+    "task-c": {"base": "", "tick": "", "note": ""}
+  },
+  "weights": {
+    "_comment": "Relative to the model's input price. Output = the model's output/input price ratio (5 for Opus 5.5 and Fable 5.1).",
+    "input_tokens": 1.0,
+    "cache_creation_input_tokens": 1.25,
+    "cache_read_input_tokens": 0.1,
+    "output_tokens": 5.0
+  },
+  "thresholds": {"T1": 0.20, "T2": 0.10, "T3": 0.05, "T4": 0.10, "T6": 0.02}
+}

@@ -1,0 +1,49 @@
+{
+  "session": "24671c5d",
+  "milestone": "m17a",
+  "base": "9738747",
+  "tick": "54d9806",
+  "window": {
+    "start": "2026-10-10T21:09:24.476Z",
+    "end": "2026-10-10T21:11:37.902Z",
+    "closed_by": "PLAN.md written by Bash"
+  },
+  "M1_raw": 658549,
+  "M1_weighted": 201077,
+  "M1_fields": {
+    "input_tokens": 354,
+    "cache_creation_input_tokens": 76603,
+    "cache_read_input_tokens": 572039,
+    "output_tokens": 9553
+  },
+  "M1_requests": 12,
+  "models": [
+    "claude-fable-5-1"
+  ],
+  "M2_tool_calls": 12,
+  "M5_exploratory_share": 0.297,
+  "M5_opened": 64,
+  "M5_exploratory": [
+    "e2e/m13-failures.test.ts",
+    "e2e/m7-detail-panels.test.ts",
+    "src/components/ChoiceCell.tsx",
+    "src/components/FormDialog.tsx",
+    "src/data/JobStore.ts",
+    "src/data/peopleTypes.ts",
+    "src/detail/DetailTabs.tsx",
+    "src/detail/EditJobButton.tsx",
+    "src/detail/JobHeader.module.css",
+    "src/detail/SidePanel.tsx",
+    "src/detail/detailTabKeys.ts",
+    "src/pages/NotFoundPage.tsx",
+    "src/people/AddContactButton.tsx",
+    "src/people/ContactTrackerPage.tsx",
+    "src/people/contactColumns.ts",
+    "src/shell/placeholderAreas.ts",
+    "src/store/notifyingStore.ts",
+    "src/store/saveRegistry.ts",
+    "src/store/useSaves.ts"
+  ],
+  "reference_changed": 34,
+  "reference_existed_at_base": 10
+}

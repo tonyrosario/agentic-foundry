@@ -1,0 +1,696 @@
+{
+  "runs": [
+    {
+      "milestone": "m15",
+      "arm": "N",
+      "session": "8af14b3d",
+      "cost_usd": 1.827403,
+      "turns": 30,
+      "duration_s": 259,
+      "M1": 408149,
+      "M1_raw": 1509002,
+      "M2": 29,
+      "M5": 0.358,
+      "M3": 0.963,
+      "M4": 0.674,
+      "M7": 0.709,
+      "plan_paths": 55,
+      "M3_missed": [
+        "app/src/data/storeBehaviourSupport.ts"
+      ],
+      "excluded": [],
+      "rep": "rep1"
+    },
+    {
+      "milestone": "m15",
+      "arm": "G",
+      "session": "a72fdde0",
+      "cost_usd": 1.6833372000000004,
+      "turns": 27,
+      "duration_s": 237,
+      "M1": 394408,
+      "M1_raw": 1732211,
+      "M2": 25,
+      "M5": 0.27,
+      "M3": 0.926,
+      "M4": 0.674,
+      "M7": 0.686,
+      "plan_paths": 51,
+      "M3_missed": [
+        "app/src/jobs/JobFormDialog.tsx",
+        "app/src/mocks/handlers.test.ts"
+      ],
+      "excluded": [],
+      "rep": "rep1"
+    },
+    {
+      "milestone": "m15",
+      "arm": "N",
+      "session": "e17995fb",
+      "cost_usd": 1.9516256,
+      "turns": 26,
+      "duration_s": 302,
+      "M1": 449319,
+      "M1_raw": 1708759,
+      "M2": 25,
+      "M5": 0.348,
+      "M3": 1.0,
+      "M4": 0.605,
+      "M7": 0.812,
+      "plan_paths": 48,
+      "M3_missed": [],
+      "excluded": [],
+      "rep": "rep2"
+    },
+    {
+      "milestone": "m15",
+      "arm": "G",
+      "session": "a03ae9e5",
+      "cost_usd": 1.6802256000000002,
+      "turns": 28,
+      "duration_s": 239,
+      "M1": 391968,
+      "M1_raw": 1617198,
+      "M2": 27,
+      "M5": 0.317,
+      "M3": 1.0,
+      "M4": 0.628,
+      "M7": 0.816,
+      "plan_paths": 49,
+      "M3_missed": [],
+      "excluded": [],
+      "rep": "rep2"
+    },
+    {
+      "milestone": "m15",
+      "arm": "G",
+      "session": "20723a6c",
+      "cost_usd": 1.5665182,
+      "turns": 25,
+      "duration_s": 214,
+      "M1": 328270,
+      "M1_raw": 1028870,
+      "M2": 24,
+      "M5": 0.326,
+      "M3": 0.852,
+      "M4": 0.558,
+      "M7": 0.773,
+      "plan_paths": 44,
+      "M3_missed": [
+        "app/server/httpStatuses.test.ts",
+        "app/src/data/storeBehaviourSupport.ts",
+        "app/src/jobs/JobFormDialog.tsx",
+        "app/src/mocks/handlers.test.ts"
+      ],
+      "excluded": [],
+      "rep": "rep3"
+    },
+    {
+      "milestone": "m15",
+      "arm": "N",
+      "session": "3e19caf4",
+      "cost_usd": 1.7062259999999998,
+      "turns": 30,
+      "duration_s": 275,
+      "M1": 404600,
+      "M1_raw": 1880160,
+      "M2": 28,
+      "M5": 0.28,
+      "M3": 0.963,
+      "M4": 0.674,
+      "M7": 0.673,
+      "plan_paths": 55,
+      "M3_missed": [
+        "app/src/data/storeBehaviourSupport.ts"
+      ],
+      "excluded": [],
+      "rep": "rep3"
+    },
+    {
+      "milestone": "m16",
+      "arm": "G",
+      "session": "f93d9189",
+      "cost_usd": 1.5557678,
+      "turns": 20,
+      "duration_s": 225,
+      "M1": 348187,
+      "M1_raw": 1415087,
+      "M2": 19,
+      "M5": 0.611,
+      "M3": 0.714,
+      "M4": 0.309,
+      "M7": 0.743,
+      "plan_paths": 35,
+      "M3_missed": [
+        "app/src/components/DateCell.tsx",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/jobs/JobFormDialog.tsx",
+        "app/src/tracker/FollowUpCell.tsx",
+        "app/src/tracker/StatusCell.tsx",
+        "app/src/tracker/trackerRows.test.ts"
+      ],
+      "excluded": [],
+      "rep": "rep1"
+    },
+    {
+      "milestone": "m16",
+      "arm": "N",
+      "session": "c11c3494",
+      "cost_usd": 1.4519053999999998,
+      "turns": 24,
+      "duration_s": 181,
+      "M1": 341340,
+      "M1_raw": 1523018,
+      "M2": 23,
+      "M5": 0.54,
+      "M3": 0.524,
+      "M4": 0.236,
+      "M7": 0.567,
+      "plan_paths": 30,
+      "M3_missed": [
+        "app/src/components/DateCell.tsx",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/jobs/JobFormDialog.tsx",
+        "app/src/tracker/FollowUpCell.tsx",
+        "app/src/tracker/JobRow.tsx",
+        "app/src/tracker/SettingsMenu.tsx",
+        "app/src/tracker/StatusCell.tsx",
+        "app/src/tracker/tableColumns.ts",
+        "app/src/tracker/trackerRows.test.ts",
+        "app/src/tracker/useFocusRescue.ts"
+      ],
+      "excluded": [],
+      "rep": "rep1"
+    },
+    {
+      "milestone": "m16",
+      "arm": "G",
+      "session": "7e393677",
+      "cost_usd": 1.4218200000000003,
+      "turns": 25,
+      "duration_s": 167,
+      "M1": 296885,
+      "M1_raw": 1157876,
+      "M2": 22,
+      "M5": 0.9,
+      "M3": 0.476,
+      "M4": 0.145,
+      "M7": 0.343,
+      "plan_paths": 35,
+      "M3_missed": [
+        "app/src/components/DateCell.tsx",
+        "app/src/jobs/JobFormDialog.tsx",
+        "app/src/tracker/FollowUpCell.tsx",
+        "app/src/tracker/GroupHeaderRow.tsx",
+        "app/src/tracker/JobTrackerPage.tsx",
+        "app/src/tracker/SelectionControls.tsx",
+        "app/src/tracker/SortableHeader.tsx",
+        "app/src/tracker/StatusCell.tsx",
+        "app/src/tracker/tableColumns.ts",
+        "app/src/tracker/trackerRows.test.ts",
+        "app/src/tracker/useFocusRescue.ts"
+      ],
+      "excluded": [],
+      "rep": "rep2"
+    },
+    {
+      "milestone": "m16",
+      "arm": "N",
+      "session": "889b3b93",
+      "cost_usd": 1.2606588000000003,
+      "turns": 21,
+      "duration_s": 184,
+      "M1": 283843,
+      "M1_raw": 1190310,
+      "M2": 20,
+      "M5": 0.49,
+      "M3": 0.667,
+      "M4": 0.273,
+      "M7": 0.75,
+      "plan_paths": 36,
+      "M3_missed": [
+        "app/src/components/DateCell.tsx",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/jobs/JobFormDialog.tsx",
+        "app/src/tracker/FollowUpCell.tsx",
+        "app/src/tracker/StatusCell.tsx",
+        "app/src/tracker/tableColumns.ts",
+        "app/src/tracker/trackerRows.test.ts"
+      ],
+      "excluded": [],
+      "rep": "rep2"
+    },
+    {
+      "milestone": "m16",
+      "arm": "N",
+      "session": "e6fa9b9e",
+      "cost_usd": 1.2462853999999999,
+      "turns": 21,
+      "duration_s": 157,
+      "M1": 252940,
+      "M1_raw": 747682,
+      "M2": 20,
+      "M5": 0.5,
+      "M3": 0.619,
+      "M4": 0.255,
+      "M7": 0.545,
+      "plan_paths": 33,
+      "M3_missed": [
+        "app/src/components/DateCell.tsx",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/jobs/JobFormDialog.tsx",
+        "app/src/tracker/FollowUpCell.tsx",
+        "app/src/tracker/JobTrackerPage.tsx",
+        "app/src/tracker/StatusCell.tsx",
+        "app/src/tracker/trackerRows.test.ts",
+        "app/src/tracker/useFocusRescue.ts"
+      ],
+      "excluded": [],
+      "rep": "rep3"
+    },
+    {
+      "milestone": "m16",
+      "arm": "G",
+      "session": "5849d9b2",
+      "cost_usd": 1.4875207999999998,
+      "turns": 20,
+      "duration_s": 186,
+      "M1": 331632,
+      "M1_raw": 1347009,
+      "M2": 19,
+      "M5": 0.667,
+      "M3": 0.619,
+      "M4": 0.218,
+      "M7": 0.781,
+      "plan_paths": 32,
+      "M3_missed": [
+        "app/src/components/DateCell.tsx",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/jobs/JobFormDialog.tsx",
+        "app/src/tracker/FollowUpCell.tsx",
+        "app/src/tracker/JobTrackerPage.tsx",
+        "app/src/tracker/StatusCell.tsx",
+        "app/src/tracker/tableColumns.ts",
+        "app/src/tracker/trackerRows.test.ts"
+      ],
+      "excluded": [],
+      "rep": "rep3"
+    },
+    {
+      "milestone": "m17a",
+      "arm": "G",
+      "session": "75cfa12f",
+      "cost_usd": 1.2712454,
+      "turns": 27,
+      "duration_s": 167,
+      "M1": 291749,
+      "M1_raw": 1364544,
+      "M2": 25,
+      "M5": 0.8,
+      "M3": 0.5,
+      "M4": 0.175,
+      "M7": 0.786,
+      "plan_paths": 28,
+      "M3_missed": [
+        "app/src/detail/JobDetailPage.module.css",
+        "app/src/detail/JobDetailPage.tsx",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/detail/SidePanelContent.tsx",
+        "app/src/store/changes.ts"
+      ],
+      "excluded": [],
+      "rep": "rep1"
+    },
+    {
+      "milestone": "m17a",
+      "arm": "N",
+      "session": "5df0dd3b",
+      "cost_usd": 1.0974309999999998,
+      "turns": 17,
+      "duration_s": 128,
+      "M1": 241250,
+      "M1_raw": 951602,
+      "M2": 16,
+      "M5": 0.657,
+      "M3": 0.4,
+      "M4": 0.14,
+      "M7": 0.739,
+      "plan_paths": 23,
+      "M3_missed": [
+        "app/src/detail/DatesSection.module.css",
+        "app/src/detail/JobDetailPage.module.css",
+        "app/src/detail/JobDetailPage.tsx",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/detail/SidePanelContent.tsx",
+        "app/src/store/changes.ts"
+      ],
+      "excluded": [],
+      "rep": "rep1"
+    },
+    {
+      "milestone": "m17a",
+      "arm": "G",
+      "session": "b6907687",
+      "cost_usd": 1.2172426,
+      "turns": 19,
+      "duration_s": 134,
+      "M1": 267263,
+      "M1_raw": 1047804,
+      "M2": 18,
+      "M5": 0.659,
+      "M3": 0.5,
+      "M4": 0.211,
+      "M7": 0.714,
+      "plan_paths": 28,
+      "M3_missed": [
+        "app/src/detail/DatesSection.module.css",
+        "app/src/detail/JobDetailPage.module.css",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/detail/SidePanelContent.tsx",
+        "app/src/store/changes.ts"
+      ],
+      "excluded": [],
+      "rep": "rep2"
+    },
+    {
+      "milestone": "m17a",
+      "arm": "N",
+      "session": "756aa6e5",
+      "cost_usd": 1.0750086,
+      "turns": 20,
+      "duration_s": 146,
+      "M1": 233482,
+      "M1_raw": 959701,
+      "M2": 18,
+      "M5": 0.722,
+      "M3": 0.5,
+      "M4": 0.105,
+      "M7": 0.69,
+      "plan_paths": 29,
+      "M3_missed": [
+        "app/src/detail/JobDetailPage.module.css",
+        "app/src/detail/JobDetailPage.tsx",
+        "app/src/detail/JobHeader.tsx",
+        "app/src/detail/JobListPane.tsx",
+        "app/src/detail/SidePanelContent.tsx"
+      ],
+      "excluded": [],
+      "rep": "rep2"
+    },
+    {
+      "milestone": "m17a",
+      "arm": "N",
+      "session": "e1cfd525",
+      "cost_usd": 1.1018816,
+      "turns": 19,
+      "duration_s": 133,
+      "M1": 247364,
+      "M1_raw": 1040250,
+      "M2": 18,
+      "M5": 1.0,
+      "M3": 0.6,
+      "M4": 0.105,
+      "M7": 0.696,
+      "plan_paths": 23,
+      "M3_missed": [
+        "app/src/detail/DatesSection.module.css",
+        "app/src/detail/JobDetailPage.module.css",
+        "app/src/detail/JobDetailPage.tsx",
+        "app/src/detail/SidePanelContent.tsx"
+      ],
+      "excluded": [],
+      "rep": "rep3"
+    },
+    {
+      "milestone": "m17a",
+      "arm": "G",
+      "session": "73a98234",
+      "cost_usd": 1.1180672,
+      "turns": 19,
+      "duration_s": 147,
+      "M1": 251480,
+      "M1_raw": 1047412,
+      "M2": 18,
+      "M5": 0.706,
+      "M3": 0.5,
+      "M4": 0.105,
+      "M7": 0.762,
+      "plan_paths": 21,
+      "M3_missed": [
+        "app/src/detail/DatesSection.module.css",
+        "app/src/detail/JobDetailPage.module.css",
+        "app/src/detail/JobDetailPage.tsx",
+        "app/src/detail/JobHeader.tsx",
+        "app/src/detail/SidePanelContent.tsx"
+      ],
+      "excluded": [],
+      "rep": "rep3"
+    }
+  ],
+  "per_milestone_arm": {
+    "m15": {
+      "G": {
+        "n": 3,
+        "M1": {
+          "median": 391968,
+          "min": 328270,
+          "max": 394408
+        },
+        "M2": {
+          "median": 25,
+          "min": 24,
+          "max": 27
+        },
+        "M3": {
+          "median": 0.926,
+          "min": 0.852,
+          "max": 1.0
+        },
+        "M4": {
+          "median": 0.628,
+          "min": 0.558,
+          "max": 0.674
+        },
+        "M5": {
+          "median": 0.317,
+          "min": 0.27,
+          "max": 0.326
+        },
+        "M7": {
+          "median": 0.773,
+          "min": 0.686,
+          "max": 0.816
+        }
+      },
+      "N": {
+        "n": 3,
+        "M1": {
+          "median": 408149,
+          "min": 404600,
+          "max": 449319
+        },
+        "M2": {
+          "median": 28,
+          "min": 25,
+          "max": 29
+        },
+        "M3": {
+          "median": 0.963,
+          "min": 0.963,
+          "max": 1.0
+        },
+        "M4": {
+          "median": 0.674,
+          "min": 0.605,
+          "max": 0.674
+        },
+        "M5": {
+          "median": 0.348,
+          "min": 0.28,
+          "max": 0.358
+        },
+        "M7": {
+          "median": 0.709,
+          "min": 0.673,
+          "max": 0.812
+        }
+      }
+    },
+    "m16": {
+      "G": {
+        "n": 3,
+        "M1": {
+          "median": 331632,
+          "min": 296885,
+          "max": 348187
+        },
+        "M2": {
+          "median": 19,
+          "min": 19,
+          "max": 22
+        },
+        "M3": {
+          "median": 0.619,
+          "min": 0.476,
+          "max": 0.714
+        },
+        "M4": {
+          "median": 0.218,
+          "min": 0.145,
+          "max": 0.309
+        },
+        "M5": {
+          "median": 0.667,
+          "min": 0.611,
+          "max": 0.9
+        },
+        "M7": {
+          "median": 0.743,
+          "min": 0.343,
+          "max": 0.781
+        }
+      },
+      "N": {
+        "n": 3,
+        "M1": {
+          "median": 283843,
+          "min": 252940,
+          "max": 341340
+        },
+        "M2": {
+          "median": 20,
+          "min": 20,
+          "max": 23
+        },
+        "M3": {
+          "median": 0.619,
+          "min": 0.524,
+          "max": 0.667
+        },
+        "M4": {
+          "median": 0.255,
+          "min": 0.236,
+          "max": 0.273
+        },
+        "M5": {
+          "median": 0.5,
+          "min": 0.49,
+          "max": 0.54
+        },
+        "M7": {
+          "median": 0.567,
+          "min": 0.545,
+          "max": 0.75
+        }
+      }
+    },
+    "m17a": {
+      "G": {
+        "n": 3,
+        "M1": {
+          "median": 267263,
+          "min": 251480,
+          "max": 291749
+        },
+        "M2": {
+          "median": 18,
+          "min": 18,
+          "max": 25
+        },
+        "M3": {
+          "median": 0.5,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "M4": {
+          "median": 0.175,
+          "min": 0.105,
+          "max": 0.211
+        },
+        "M5": {
+          "median": 0.706,
+          "min": 0.659,
+          "max": 0.8
+        },
+        "M7": {
+          "median": 0.762,
+          "min": 0.714,
+          "max": 0.786
+        }
+      },
+      "N": {
+        "n": 3,
+        "M1": {
+          "median": 241250,
+          "min": 233482,
+          "max": 247364
+        },
+        "M2": {
+          "median": 18,
+          "min": 16,
+          "max": 18
+        },
+        "M3": {
+          "median": 0.5,
+          "min": 0.4,
+          "max": 0.6
+        },
+        "M4": {
+          "median": 0.105,
+          "min": 0.105,
+          "max": 0.14
+        },
+        "M5": {
+          "median": 0.722,
+          "min": 0.657,
+          "max": 1.0
+        },
+        "M7": {
+          "median": 0.696,
+          "min": 0.69,
+          "max": 0.739
+        }
+      }
+    }
+  },
+  "rules": {
+    "outcome": "inconclusive (rule 1: G range wider than the G-N gap on a majority of milestones)",
+    "per_milestone": {
+      "m15": {
+        "M1_saving": 0.04,
+        "G_range_share": 0.162,
+        "N_range_share": 0.11,
+        "gap_share": 0.04,
+        "dM3": -0.037,
+        "dM4": -0.046,
+        "dM7": 0.064
+      },
+      "m16": {
+        "M1_saving": -0.168,
+        "G_range_share": 0.181,
+        "N_range_share": 0.311,
+        "gap_share": 0.168,
+        "dM3": 0.0,
+        "dM4": -0.037,
+        "dM7": 0.176
+      },
+      "m17a": {
+        "M1_saving": -0.108,
+        "G_range_share": 0.167,
+        "N_range_share": 0.058,
+        "gap_share": 0.108,
+        "dM3": 0.0,
+        "dM4": 0.07,
+        "dM7": 0.066
+      }
+    },
+    "thresholds": {
+      "T1": 0.2,
+      "T2": 0.1,
+      "T3": 0.05,
+      "T4": 0.1,
+      "arm_D": "not run (plan change 2026-10-10)"
+    }
+  },
+  "excluded": []
+}

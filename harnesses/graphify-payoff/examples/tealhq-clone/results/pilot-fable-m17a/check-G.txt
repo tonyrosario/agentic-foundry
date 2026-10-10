@@ -1,0 +1,14 @@
+PASS HEAD is 9738747
+PASS no remote
+PASS no ref past the base
+PASS all objects reachable only from the base
+PASS no stash
+PASS hook present
+PASS mandate present
+PASS skill pointer present
+PASS graph built
+PASS graph built_at_commit is the base
+PASS build log names no model backend
+PASS build ran without a model key
+PASS build log clean
+PASS project memory empty (/Users/tonyrosario/.claude/projects/-private-tmp-claude-501--Users-tonyrosario-dev-tealhq-clone-7354c01a-c939-489f-81d4-669dbf8b5b65-scratchpad-runs-m17a-clone-G/memory)
