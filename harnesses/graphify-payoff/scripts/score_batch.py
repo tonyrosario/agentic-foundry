@@ -137,7 +137,9 @@ def main():
     out_path = sys.argv[sys.argv.index('--out') + 1] if '--out' in sys.argv else None
     scored = []
     for ms in BASES:
-        for log in sorted(glob.glob(os.path.join(runs_dir, ms, 'rep*', 'runs.jsonl'))):
+        # run_batch.sh writes <ms>/rep<n>/; an archived batch may be flattened to <ms>-rep<n>/.
+        logs = glob.glob(os.path.join(runs_dir, ms, 'rep*', 'runs.jsonl')) + glob.glob(os.path.join(runs_dir, f'{ms}-rep*', 'runs.jsonl'))
+        for log in sorted(logs):
             for line in open(log):
                 row = json.loads(line)
                 if 'arm' in row:

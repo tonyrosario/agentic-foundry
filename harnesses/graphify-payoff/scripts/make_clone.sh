@@ -3,7 +3,9 @@
 #   sh local/graphify-eval/make_clone.sh <base-sha> <G|N|D> <new-dir>
 # The clone holds only the base commit's history, has no remote and no later refs. Arm N removes the
 # hook, the CLAUDE.md graphify section, .claude/CLAUDE.md and the project skill; arm D keeps the graph
-# and the CLI but replaces the mandate with one line; arm G is the repository as it was.
+# and the CLI but replaces the mandate with one line; arm G is the repository as it was, or, when the
+# base commit no longer carries the hook and `arm_G_restore` is configured, the repository with the
+# hook settings and the graph section re-installed from that commit.
 # Graph builds run with every model API key unset so `graphify update` cannot call a model.
 set -eu
 base=$1; arm=$2; dir=$3
@@ -29,11 +31,52 @@ open(path, 'w').write(head.rstrip('\n') + '\n' + (note + '\n' if note else ''))
 EOF
 }
 
+restore_mandate() {  # arm G on a repo that dropped the mandate: take hook files and the section from the restore commit
+  rc=$1; shift
+  for rel in "$@"; do
+    mkdir -p "$dir/$(dirname "$rel")"
+    git -C "$main" show "$rc:$rel" > "$dir/$rel" || { echo "no $rel at $rc" >&2; exit 4; }
+  done
+  git -C "$main" show "$rc:$ifile" > "$dir/.restore-instructions.tmp"
+  python3 -I - "$dir/$ifile" "$heading" "$dir/.restore-instructions.tmp" <<'EOF'
+import os, sys
+path, heading, tmp = sys.argv[1], sys.argv[2], sys.argv[3]
+sep = '\n' + heading + '\n'
+old = open(tmp).read()
+os.remove(tmp)
+i = old.find(sep)
+assert i >= 0, 'no graph section at the restore commit'
+rest = old[i + 1:]
+j = rest.find('\n## ', 1)
+section = rest if j < 0 else rest[:j]
+text = open(path).read()
+head, found, _ = text.partition(sep)
+base = head if found else text
+open(path, 'w').write(base.rstrip('\n') + '\n\n' + section.strip('\n') + '\n')
+EOF
+  echo "arm G: hook settings and the '$heading' section installed from $rc"
+}
+
 case "$arm" in
-  G) ;;
+  G)
+    rc=$(cfg arm_G_restore_commit)
+    # shellcheck disable=SC2046  # file list is space-separated by design
+    if [ -n "$rc" ] && ! grep -q "$(cfg hook_command_prefix)" "$dir/.claude/settings.json" 2>/dev/null; then
+      restore_mandate "$rc" $(cfg arm_G_restore_files)
+    fi
+    ;;
   N)
     strip_mandate ""
     cfg arm_N_remove | while read -r rel; do [ -n "$rel" ] && rm -rf "${dir:?}/$rel"; done
+    python3 -I - "$dir/$ifile" "$(cfg arm_N_edits)" <<'EOF'
+import json, sys
+path, edits = sys.argv[1], json.loads(sys.argv[2])
+text = open(path).read()
+for old, new in edits:
+    if old in text:
+        text = text.replace(old, new)
+open(path, 'w').write(text)
+EOF
     python3 -I - "$dir/.claude/settings.json" <<'EOF'
 import json, sys
 p = sys.argv[1]; s = json.load(open(p))

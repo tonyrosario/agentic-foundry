@@ -11,6 +11,8 @@
     "instructions_section_heading": "## graphify",
     "graph_out": "app/graphify-out",
     "arm_N_remove": [".claude/CLAUDE.md", ".claude/skills/graphify"],
+    "arm_N_edits": [["- Find the lines you need first (search, or `graphify query` when a relationship question\n  suits it; see \"graphify\" below), then read only those lines, by range.", "- Find the lines you need first (search), then read only those lines, by range."]],
+    "arm_G_restore": {"commit": "54d9806", "files": [".claude/settings.json"], "_comment": "main dropped the hook and the mandate in 7e2b73d (option B); for later bases arm G re-installs them from the last mandated commit"},
     "arm_D_note": "\n## graphify\n\nA code graph of `app/` exists in `graphify-out/`. `graphify query \"<question>\"`, `graphify path`, `graphify explain` and `graphify affected` are available when they help; nothing requires them."
   },
   "runs": {

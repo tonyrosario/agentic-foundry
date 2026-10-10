@@ -38,6 +38,12 @@ INSTRUCTIONS_FILE = RAW['graph'].get('instructions_file', 'CLAUDE.md')
 GRAPH_OUT = RAW['graph'].get('graph_out', (CODE_PREFIX + 'graphify-out'))
 ARM_N_REMOVE = RAW['graph'].get('arm_N_remove', [])
 ARM_D_NOTE = RAW['graph'].get('arm_D_note', '')
+# For a repo that no longer (or never) mandates the graph: a commit whose hook settings and
+# instructions section arm G installs, so G means "mandated" rather than "whatever the base had".
+ARM_G_RESTORE = RAW['graph'].get('arm_G_restore') or {}
+# Literal [old, new] substitutions arm N applies to the instructions file after the section is
+# stripped, for mentions of the graph that live outside the section (an on-demand repo has these).
+ARM_N_EDITS = RAW['graph'].get('arm_N_edits', [])
 MODEL = RAW['runs']['model']
 CAP_USD = RAW['runs']['cap_usd']
 PROMPT = RAW['runs']['prompt']
@@ -68,9 +74,13 @@ def main():
     if key == 'arm_N_remove':
         print('\n'.join(ARM_N_REMOVE))
         return
+    if key == 'arm_N_edits':
+        print(json.dumps(ARM_N_EDITS))
+        return
     value = {'repo': REPO, 'code_root': CODE_ROOT, 'graph_out': GRAPH_OUT, 'hook_command_prefix': HOOK_CMD,
              'instructions_file': INSTRUCTIONS_FILE, 'instructions_section_heading': SECTION_HEADING,
-             'arm_D_note': ARM_D_NOTE, 'model': MODEL, 'cap_usd': CAP_USD, 'prompt': PROMPT,
+             'arm_D_note': ARM_D_NOTE, 'arm_G_restore_commit': ARM_G_RESTORE.get('commit', ''),
+             'arm_G_restore_files': ' '.join(ARM_G_RESTORE.get('files', [])), 'model': MODEL, 'cap_usd': CAP_USD, 'prompt': PROMPT,
              'project': PROJECT}[key]
     print(value)
 

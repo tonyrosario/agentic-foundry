@@ -39,8 +39,14 @@ graph only once or twice per run; drop it unless the repo's agents actually use 
 
 ## Applying it to a repository
 
-1. **Prerequisites.** The repo is on a commit where graphify is set up as you intend to test it
-   (graph built, hook and instructions in place). You have a few finished tasks with a clean
+1. **Prerequisites.** Each task's base commit either carries graphify as you intend to test it
+   (hook and instructions in place) or `arm_G_restore` names a commit to take them from: arm G
+   installs that commit's hook files and instructions section into any clone whose base lacks
+   the hook, so a repo that has gone on demand, or never mandated the graph, can still be
+   measured. If the graph is mentioned outside that section (an on-demand repo usually says
+   "or `graphify query`" in its reading rules), list the literal `[old, new]` substitutions
+   arm N must make in `arm_N_edits`; `check_clone.sh` fails N on any remaining mention.
+   You have a few finished tasks with a clean
    `base` commit (the commit before the task's first change) and a `tick` commit (the task done).
    Three tasks is the minimum the rules need. Claude Code sessions for the repo exist under
    `~/.claude/projects/<slug>/` if you want the historical census (optional).

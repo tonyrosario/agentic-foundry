@@ -11,6 +11,8 @@
     "instructions_section_heading": "## graphify",
     "graph_out": "graphify-out",
     "arm_N_remove": [".claude/CLAUDE.md", ".claude/skills/graphify"],
+    "arm_N_edits": [["(search, or `graphify query` when a relationship question suits it)", "(search)"]],
+    "arm_G_restore": {"commit": "<sha of the last commit that had the hook; omit if every base commit has it>", "files": [".claude/settings.json"]},
     "arm_D_note": "\n## graphify\n\nA code graph exists in `graphify-out/`. `graphify query \"<question>\"`, `graphify path`, `graphify explain` and `graphify affected` are available when they help; nothing requires them.",
     "questions_file": "questions.json"
   },
